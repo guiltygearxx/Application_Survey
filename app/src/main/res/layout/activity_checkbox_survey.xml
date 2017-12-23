@@ -64,7 +64,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:onClick="next_step_2"
-            android:text="Next" />
+            android:text="Next Step" />
 
     </RelativeLayout>
 
