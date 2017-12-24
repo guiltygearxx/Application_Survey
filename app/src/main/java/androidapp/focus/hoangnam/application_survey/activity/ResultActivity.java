@@ -1,7 +1,9 @@
 package androidapp.focus.hoangnam.application_survey.activity;
 
+import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
 import android.text.TextUtils;
 import android.widget.TextView;
 
@@ -51,6 +53,25 @@ public class ResultActivity extends AppCompatActivity {
         this.buildResult();
 
         txtResult.setText(this.result);
+
+        this.notifySurveyResult();
+    }
+
+    private void notifySurveyResult() {
+
+        NotificationCompat.Builder builder =
+                new android.support.v7.app.NotificationCompat.Builder(this);
+
+        builder.setContentTitle(getResources().getString(R.string.app_name))
+                .setContentText("Congratulation, you just have finish our survey. Thank u!")
+                .setSmallIcon(R.drawable.ic_launcher_background);
+
+        int mNotificationId = 001;
+
+        NotificationManager mNotifyMgr =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        mNotifyMgr.notify(mNotificationId, builder.build());
     }
 
     /**

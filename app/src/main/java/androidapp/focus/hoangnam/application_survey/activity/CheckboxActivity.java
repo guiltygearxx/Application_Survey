@@ -1,7 +1,9 @@
 package androidapp.focus.hoangnam.application_survey.activity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 
 import java.util.ArrayList;
@@ -51,5 +53,14 @@ public class CheckboxActivity extends BaseQuestionActivity {
         }
 
         return answers;
+    }
+
+    @Override
+    protected void changeBackGroundColor() {
+
+        if (bgColor != null) {
+
+            findViewById(R.id.rootLayout).setBackground(new ColorDrawable(bgColor));
+        }
     }
 }

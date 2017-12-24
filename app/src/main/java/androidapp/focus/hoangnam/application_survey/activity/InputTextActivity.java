@@ -1,5 +1,6 @@
 package androidapp.focus.hoangnam.application_survey.activity;
 
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.widget.EditText;
 
@@ -43,5 +44,14 @@ public class InputTextActivity extends BaseQuestionActivity {
         }
 
         return data;
+    }
+
+    @Override
+    protected void changeBackGroundColor() {
+
+        if (bgColor != null) {
+
+            findViewById(R.id.rootLayout).setBackground(new ColorDrawable(bgColor));
+        }
     }
 }

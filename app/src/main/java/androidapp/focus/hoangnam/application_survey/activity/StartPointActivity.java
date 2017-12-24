@@ -8,6 +8,7 @@ import java.util.List;
 
 import androidapp.focus.hoangnam.application_survey.R;
 import androidapp.focus.hoangnam.application_survey.SurveyFlowManager;
+import androidapp.focus.hoangnam.application_survey.model.ApplicationContext;
 import androidapp.focus.hoangnam.application_survey.model.Question;
 
 public class StartPointActivity extends AppCompatActivity {
@@ -41,6 +42,8 @@ public class StartPointActivity extends AppCompatActivity {
     private void init() {
 
         SurveyFlowManager.instance = surveyFlowManage = new SurveyFlowManager();
+
+        ApplicationContext.instance = new ApplicationContext();
 
         List<Question> questions = loadQuestions();
 

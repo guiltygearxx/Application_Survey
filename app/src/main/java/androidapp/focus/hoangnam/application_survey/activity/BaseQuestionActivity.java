@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidapp.focus.hoangnam.application_survey.SurveyFlowManager;
 import androidapp.focus.hoangnam.application_survey.model.Answer;
+import androidapp.focus.hoangnam.application_survey.model.ApplicationContext;
 import androidapp.focus.hoangnam.application_survey.model.Question;
 
 /**
@@ -14,11 +15,17 @@ import androidapp.focus.hoangnam.application_survey.model.Question;
 
 public abstract class BaseQuestionActivity extends AppCompatActivity implements QuestionActivity {
 
+    protected ApplicationContext context;
+
     protected SurveyFlowManager surveyFlowManager;
 
     protected Answer answer;
 
+    protected Integer bgColor;
+
     private void init() {
+
+        context = ApplicationContext.instance;
 
         this.surveyFlowManager = SurveyFlowManager.instance;
 
@@ -28,6 +35,8 @@ public abstract class BaseQuestionActivity extends AppCompatActivity implements 
     }
 
     protected abstract Object getAnswerData();
+
+    protected abstract void changeBackGroundColor();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +52,19 @@ public abstract class BaseQuestionActivity extends AppCompatActivity implements 
         surveyFlowManager.goBackPrevQuestion(answer);
 
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+
+        if (bgColor != context.getBgColor()) {
+
+            this.bgColor = context.getBgColor();
+
+            this.changeBackGroundColor();
+        }
     }
 
     @Override
