@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="next_step_3"
+            android:onClick="next"
             android:text="Submit" />
     </LinearLayout>
 
