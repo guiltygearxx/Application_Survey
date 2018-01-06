@@ -45,13 +45,4 @@ public class InputTextActivity extends BaseQuestionActivity {
 
         return data;
     }
-
-    @Override
-    protected void changeBackGroundColor() {
-
-        if (bgColor != null) {
-
-            findViewById(R.id.rootLayout).setBackground(new ColorDrawable(bgColor));
-        }
-    }
 }

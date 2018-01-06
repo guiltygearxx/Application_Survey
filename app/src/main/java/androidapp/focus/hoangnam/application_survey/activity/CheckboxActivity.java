@@ -55,12 +55,4 @@ public class CheckboxActivity extends BaseQuestionActivity {
         return answers;
     }
 
-    @Override
-    protected void changeBackGroundColor() {
-
-        if (bgColor != null) {
-
-            findViewById(R.id.rootLayout).setBackground(new ColorDrawable(bgColor));
-        }
-    }
 }

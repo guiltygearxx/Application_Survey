@@ -36,8 +36,6 @@ public abstract class BaseQuestionActivity extends AppCompatActivity implements 
 
     protected abstract Object getAnswerData();
 
-    protected abstract void changeBackGroundColor();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -58,13 +56,6 @@ public abstract class BaseQuestionActivity extends AppCompatActivity implements 
     protected void onResume() {
 
         super.onResume();
-
-        if (bgColor != context.getBgColor()) {
-
-            this.bgColor = context.getBgColor();
-
-            this.changeBackGroundColor();
-        }
     }
 
     @Override
